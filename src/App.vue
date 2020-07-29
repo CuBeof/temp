@@ -1,32 +1,52 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="app">
+      <AppNavBar/>
+      <AppLoading/>
+      <AppContent/>
+  </v-app>
 </template>
 
+<script>
+import AppNavBar from './components/AppNavBar'
+import AppContent from './components/AppContent'
+import AppLoading from './components/AppLoading'
+
+export default {
+  name: 'App',
+  data: () => ({
+    //
+  }),
+  components: {
+    AppNavBar,
+    AppContent,
+    AppLoading,
+  }
+};
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  .box {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem
+  }
 
-#nav {
-  padding: 30px;
-}
+  @media (min-width:640px) {
+    .box {
+      max-width: 640px
+    }
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  @media (min-width:768px) {
+    .box {
+      max-width: 768px
+    }
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  @media (min-width:992px) {
+    .box {
+      max-width: 992px
+    }
+  }
 </style>
